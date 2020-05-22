@@ -1,0 +1,2 @@
+def sol(s):
+    pass
