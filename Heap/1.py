@@ -15,14 +15,7 @@ def top(heap):
         return heap[len(heap)-1]
 
 def push(heap,x):
-    if len(heap) == 0:
-        heap.append(x)
-    if x > top(heap) and len(heap) > 3:
-        heap.append(x)
-        pop(top(heap))
-    
-    else:
-        [x] + heap
+    heap.append(x)        
 
 def pop(heap):
     if len(heap) == 0:
@@ -32,20 +25,28 @@ def pop(heap):
 
 
 
-def ksmall(arr,n):
+def ksmall(arr,n,k):
     h = createHeap()
 
     for i in range(0,n):
-        push(h,arr[i])
-    return top(h)
-
-
-
+        if len(h) == 0:
+            push(h,arr[i])
+        
+        elif arr[i] > top(h):
+            h.append(arr[i])
+        
+        else:
+            [arr[i]] + h
+    
+    
+    push(h,arr[i])
+    
+    return len(h)
 
 
 if __name__ == "__main__":
-    arr = [7,10,4,3,20,15]
+    arr = [7,10,4,3]
     n = len(arr)
-    print(ksmall(arr,n))
+    print(ksmall(arr,n,3))
 
     

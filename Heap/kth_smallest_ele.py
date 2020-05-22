@@ -28,15 +28,22 @@ def pop(heap):
     else:
         heap.pop()
 
-if __name__ == "__main__":
+
+def ksmall(arr,n,k):
     h = createHeap()
-    push(h,7)
-    push(h,10)
-    push(h,4)
-    push(h,11)
-    pop(h)
-    pop(h)
-    pop(h)
-    print(top(h))
+    for i in range(n):
+        push(h,arr[i])
+
+        if len(h) > k:
+            pop(h)
+    
+    return top(h)
 
 
+if __name__ == "__main__":
+    arr = [7,10,4,3,20,15]
+    n = len(arr)
+    k = 3
+    print(ksmall(arr,n,k))
+
+    
