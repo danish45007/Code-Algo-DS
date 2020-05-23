@@ -41,9 +41,9 @@ def ksmall(arr,n,k):
 
 
 if __name__ == "__main__":
-    arr = [7,10,4,3,20,15]
+    arr = [3,2,1,5,6,4]
     n = len(arr)
-    k = 3
+    k = 2
     print(ksmall(arr,n,k))
 
     
