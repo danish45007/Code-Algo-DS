@@ -8,7 +8,7 @@ def Count_sub_diff(arr,diff,sum,n):
     for j in range(1,sum+1):
         k[0][j] = 0
 
-    for i in range(n+1):
+    for i in range(1,n+1):
         for j in range(sum+1):
 
             if (arr[i-1] <= j):
