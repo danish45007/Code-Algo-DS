@@ -20,7 +20,7 @@ def sol(arr,n):
             min_val = min(l)
 
             res.append(min_val-arr[j])
-
+		
         return sum(res)
 
 
